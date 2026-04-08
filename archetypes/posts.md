@@ -6,7 +6,7 @@ draft: true
 description: ""
 tags: []
 categories: []
-author: "北海 / Chunhao Zhang"
+author: ""
 showToc: true
 TocOpen: false
 math: false

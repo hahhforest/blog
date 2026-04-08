@@ -47,6 +47,7 @@ languages:
     weight: 1
     title: "Forest's Blog"
     params:
+      author: "北海"
       homeInfoParams:
         Title: "你好 👋"
         Content: >
@@ -80,6 +81,7 @@ languages:
     weight: 2
     title: "Forest's Blog"
     params:
+      author: "Chunhao Zhang"
       homeInfoParams:
         Title: "Hi there 👋"
         Content: >
@@ -157,11 +159,11 @@ params:
     limit: 10
     keys: ["title", "permalink", "summary", "content"]
 
-  # "建议修改" 链接
+  # "Raise Issue" 链接
   editPost:
-    URL: "https://github.com/hahhforest/blog/tree/main/content"
-    Text: "Suggest Changes"
-    appendFilePath: true
+    URL: "https://github.com/hahhforest/blog/issues/new"
+    Text: "Raise Issue"
+    appendFilePath: false
 
 # === Markup ===
 markup:
