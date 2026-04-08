@@ -1,0 +1,14 @@
+read_time:
+  one: "{{ .Count }} 分钟"
+  other: "{{ .Count }} 分钟"
+words:
+  one: "{{ .Count }} 字"
+  other: "{{ .Count }} 字"
+toc: "目录"
+search_placeholder: "搜索..."
+translations: "语言"
+home: "首页"
+prev: "上一篇"
+next: "下一篇"
+share_on: "分享到"
+edit_post: "建议修改"

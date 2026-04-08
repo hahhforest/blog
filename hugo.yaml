@@ -1,0 +1,176 @@
+baseURL: "https://hahhforest.github.io/"
+title: "Blog"
+theme: PaperMod
+copyright: "© 2026"
+
+# 基本构建设置
+enableRobotsTXT: true
+enableEmoji: true
+buildDrafts: false
+buildFuture: false
+pygmentsUseClasses: true
+
+# 分页
+pagination:
+  pagerSize: 10
+
+# 搜索功能必须（JSON 输出）
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# 压缩
+minify:
+  disableXML: true
+  minifyOutput: true
+
+# Sitemap 配置
+sitemap:
+  changefreq: weekly
+  priority: 0.5
+
+# RSS 限制
+services:
+  rss:
+    limit: 30
+
+# === 多语言配置 ===
+# 默认中文，英文使用 /en/ 前缀
+defaultContentLanguage: zh
+defaultContentLanguageInSubdir: false
+
+languages:
+  zh:
+    languageName: "中文"
+    weight: 1
+    title: "Forest's Blog"
+    params:
+      homeInfoParams:
+        Title: "你好 👋"
+        Content: >
+          欢迎来到我的博客。我写关于 AI、大语言模型和软件工程的内容。
+      description: "关于 AI、大语言模型和软件工程的技术博客。"
+    menu:
+      main:
+        - identifier: posts
+          name: 文章
+          url: /posts/
+          weight: 10
+        - identifier: archives
+          name: 归档
+          url: /archives/
+          weight: 20
+        - identifier: search
+          name: 搜索
+          url: /search/
+          weight: 30
+        - identifier: tags
+          name: 标签
+          url: /tags/
+          weight: 40
+        - identifier: about
+          name: 关于
+          url: /about/
+          weight: 50
+
+  en:
+    languageName: "EN"
+    weight: 2
+    title: "Forest's Blog"
+    params:
+      homeInfoParams:
+        Title: "Hi there 👋"
+        Content: >
+          Welcome to my blog. I write about AI, LLMs, and software engineering.
+      description: "A technical blog about AI, LLMs, and software engineering."
+    menu:
+      main:
+        - identifier: posts
+          name: Posts
+          url: /en/posts/
+          weight: 10
+        - identifier: archives
+          name: Archives
+          url: /en/archives/
+          weight: 20
+        - identifier: search
+          name: Search
+          url: /en/search/
+          weight: 30
+        - identifier: tags
+          name: Tags
+          url: /en/tags/
+          weight: 40
+        - identifier: about
+          name: About
+          url: /en/about/
+          weight: 50
+
+# === 全局 params ===
+params:
+  env: production
+
+  author: "Forest"
+  images: ["images/og-default.png"]
+  DateFormat: "January 2, 2006"
+
+  # 主题切换（亮/暗/跟随系统）
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  # 文章显示
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  ShowFullTextinRSS: true
+  UseHugoToc: true
+  showtoc: true
+  tocopen: false
+  comments: true
+
+  # 社交图标
+  socialIcons:
+    - name: github
+      url: "https://github.com/hahhforest"
+    - name: rss
+      url: "/index.xml"
+
+  # Favicon
+  assets:
+    favicon: "/favicon.ico"
+    disableHLJS: true
+
+  # 搜索
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 1
+    limit: 10
+    keys: ["title", "permalink", "summary", "content"]
+
+  # "建议修改" 链接
+  editPost:
+    URL: "https://github.com/hahhforest/blog/tree/main/content"
+    Text: "Suggest Changes"
+    appendFilePath: true
+
+# === Markup ===
+markup:
+  highlight:
+    noClasses: false
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    style: dracula
+  goldmark:
+    renderer:
+      unsafe: true

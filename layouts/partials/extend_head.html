@@ -1,0 +1,26 @@
+{{- /* KaTeX 数学公式 - 仅在文章设置 math: true 时加载 */ -}}
+{{- if .Params.math -}}
+{{- partial "math.html" . -}}
+{{- end -}}
+
+{{- /* 中文字体优化 */ -}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+{{- /* Person Schema - 仅在 About 页面注入 */ -}}
+{{- if eq .RelPermalink "/about/" -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ .Site.Params.author }}",
+  "url": "{{ .Site.BaseURL }}",
+  "sameAs": [
+    "https://github.com/hahhforest"
+  ]
+}
+</script>
+{{- end -}}
+
+{{- /* Cloudflare Web Analytics 占位 - 获取 token 后取消注释 */ -}}
+{{- /* <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "YOUR_TOKEN"}'></script> */ -}}
