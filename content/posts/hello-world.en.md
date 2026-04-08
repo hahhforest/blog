@@ -4,7 +4,7 @@ date: 2026-04-08
 lastmod: 2026-04-08
 draft: false
 description: "My first blog post, introducing the content direction and tech stack of this blog."
-tags: ["AI", "Blog"]
+tags: ["Blog Setup", "Hugo", "PaperMod"]
 categories: ["Essay"]
 author: "Chunhao Zhang"
 showToc: true

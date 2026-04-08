@@ -4,7 +4,7 @@ date: 2026-04-08
 lastmod: 2026-04-08
 draft: false
 description: "这是我的第一篇博客文章，介绍本博客的内容方向和技术架构。"
-tags: ["AI", "博客"]
+tags: ["博客搭建", "Hugo", "PaperMod"]
 categories: ["随笔"]
 author: "北海"
 showToc: true
