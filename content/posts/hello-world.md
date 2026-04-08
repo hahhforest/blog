@@ -6,7 +6,7 @@ draft: false
 description: "这是我的第一篇博客文章，介绍本博客的内容方向和技术架构。"
 tags: ["AI", "博客"]
 categories: ["随笔"]
-author: "Forest"
+author: "北海 / Chunhao Zhang"
 showToc: true
 TocOpen: false
 math: false

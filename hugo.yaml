@@ -112,7 +112,7 @@ languages:
 params:
   env: production
 
-  author: "Forest"
+  author: "北海 / Chunhao Zhang"
   images: ["images/og-default.png"]
   DateFormat: "January 2, 2006"
 

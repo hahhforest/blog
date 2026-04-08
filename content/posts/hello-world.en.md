@@ -6,7 +6,7 @@ draft: false
 description: "My first blog post, introducing the content direction and tech stack of this blog."
 tags: ["AI", "Blog"]
 categories: ["Essay"]
-author: "Forest"
+author: "北海 / Chunhao Zhang"
 showToc: true
 TocOpen: false
 math: false
