@@ -1,8 +1,7 @@
-{{- /* Giscus 评论系统 - 暗色模式自适应 */ -}}
+{{- /* Giscus 评论系统 - 暗色模式自适应 + 多语言 */ -}}
 {{- if (.Site.Params.comments) -}}
 <div id="giscus-container">
   <script>
-    // 根据当前主题设置 Giscus 主题
     function getGiscusTheme() {
       const theme = document.body.className.includes('dark') ? 'dark' : 'light';
       return theme;
@@ -18,32 +17,28 @@
       }
     }
 
-    // 监听主题切换
     const observer = new MutationObserver(setGiscusTheme);
     observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
 
-    // 获取页面语言
     const lang = document.documentElement.lang === 'zh' ? 'zh-CN' : 'en';
 
-    // 加载 Giscus（需要配置后取消注释）
-    /*
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
-    script.setAttribute('data-repo', '');
-    script.setAttribute('data-repo-id', '');
-    script.setAttribute('data-category', '');
-    script.setAttribute('data-category-id', '');
+    script.setAttribute('data-repo', 'hahhforest/blog');
+    script.setAttribute('data-repo-id', 'R_kgDOR9ILbA');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDOR9ILbM4C6YiK');
     script.setAttribute('data-mapping', 'pathname');
-    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-strict', '1');
     script.setAttribute('data-reactions-enabled', '1');
     script.setAttribute('data-emit-metadata', '0');
     script.setAttribute('data-input-position', 'bottom');
     script.setAttribute('data-theme', getGiscusTheme());
     script.setAttribute('data-lang', lang);
+    script.setAttribute('data-loading', 'lazy');
     script.setAttribute('crossorigin', 'anonymous');
     script.async = true;
     document.getElementById('giscus-container').appendChild(script);
-    */
   </script>
 </div>
 {{- end -}}
