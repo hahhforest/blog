@@ -45,7 +45,7 @@ languages:
   zh:
     languageName: "中文"
     weight: 1
-    title: "Forest's Blog"
+    title: "北海"
     params:
       author: "北海"
       homeInfoParams:
@@ -79,7 +79,7 @@ languages:
   en:
     languageName: "EN"
     weight: 2
-    title: "Forest's Blog"
+    title: "Chunhao Zhang"
     params:
       author: "Chunhao Zhang"
       homeInfoParams:
