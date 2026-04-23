@@ -1,5 +1,5 @@
 ---
-title: "让 AI 写出人话"
+title: "如何让AI说人话"
 date: 2026-04-23
 lastmod: 2026-04-23
 draft: false
