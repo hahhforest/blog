@@ -52,7 +52,7 @@ languages:
       homeInfoParams:
         Title: "你好 👋"
         Content: >
-          欢迎来到我的博客。我写关于 AI、大语言模型和软件工程的内容。
+          一个工程师的技术笔记和畅想。
       description: "关于 AI、大语言模型和软件工程的技术博客。"
     menu:
       main:
@@ -90,7 +90,7 @@ languages:
       homeInfoParams:
         Title: "Hi there 👋"
         Content: >
-          Welcome to my blog. I write about AI, LLMs, and software engineering.
+          Tech notes and musings from an engineer.
       description: "A technical blog about AI, LLMs, and software engineering."
     menu:
       main:
