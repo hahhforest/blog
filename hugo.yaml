@@ -9,6 +9,7 @@ enableEmoji: true
 buildDrafts: false
 buildFuture: false
 pygmentsUseClasses: true
+hasCJKLanguage: true    # 修复中文字数统计和阅读时间
 
 # 分页
 pagination:
