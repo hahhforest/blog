@@ -122,6 +122,7 @@ languages:
 # === 全局 params ===
 params:
   env: production
+  mainSections: ["posts", "readings"]
 
   author: "北海 / Chunhao Zhang"
   images: ["images/og-default.png"]
