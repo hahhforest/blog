@@ -59,6 +59,10 @@ languages:
           name: 文章
           url: /posts/
           weight: 10
+        - identifier: readings
+          name: 博览
+          url: /readings/
+          weight: 15
         - identifier: archives
           name: 归档
           url: /archives/
@@ -93,6 +97,10 @@ languages:
           name: Posts
           url: /en/posts/
           weight: 10
+        - identifier: readings
+          name: Readings
+          url: /en/readings/
+          weight: 15
         - identifier: archives
           name: Archives
           url: /en/archives/
