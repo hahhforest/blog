@@ -1,11 +1,17 @@
-# 北海的博客
+<div align="center">
 
-一个工程师的技术笔记和畅想。
+# 🌊 北海的博客
 
-**[→ 访问博客](https://blog-6sm.pages.dev/)**
+*一个工程师的技术笔记和畅想。*
 
-## 关于
+[![Blog](https://img.shields.io/badge/blog-blog--6sm.pages.dev-blue?style=flat-square)](https://blog-6sm.pages.dev/)
+[![Hugo](https://img.shields.io/badge/Hugo-0.160.0-ff4088?style=flat-square&logo=hugo)](https://gohugo.io/)
+[![Cloudflare Pages](https://img.shields.io/badge/deploy-Cloudflare%20Pages-f38020?style=flat-square&logo=cloudflare)](https://pages.cloudflare.com/)
 
-AI、大语言模型、软件工程，偶尔写点别的。
+</div>
 
-使用 [Hugo](https://gohugo.io/) + [PaperMod](https://github.com/adityatelange/hugo-PaperMod) 搭建，部署在 [Cloudflare Pages](https://pages.cloudflare.com/) 上。
+---
+
+写 AI 和代码的事，翻译值得读的论文和博客，拍照，读庄子，发呆。
+
+👉 **[去看看](https://blog-6sm.pages.dev/)**
