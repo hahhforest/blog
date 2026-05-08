@@ -21,7 +21,9 @@ comments: true
 ---
 
 > Original paper: [DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf)
+>
 > Authors: DeepSeek-AI
+>
 > Model checkpoints: [https://huggingface.co/collections/deepseek-ai/deepseek-v4](https://huggingface.co/collections/deepseek-ai/deepseek-v4)
 
 ---

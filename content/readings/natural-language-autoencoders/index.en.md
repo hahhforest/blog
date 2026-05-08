@@ -21,8 +21,11 @@ comments: true
 ---
 
 > Original post: [Natural Language Autoencoders](https://www.anthropic.com/research/natural-language-autoencoders)
+>
 > Full paper: [transformer-circuits.pub/2026/nla](https://transformer-circuits.pub/2026/nla/index.html)
+>
 > Code: [github.com/kitft/natural_language_autoencoders](https://github.com/kitft/natural_language_autoencoders)
+>
 > Interactive demo: [neuronpedia.org/nla](http://neuronpedia.org/nla)
 
 ---

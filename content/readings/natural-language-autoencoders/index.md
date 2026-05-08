@@ -21,9 +21,13 @@ comments: true
 ---
 
 > 原文：[Natural Language Autoencoders](https://www.anthropic.com/research/natural-language-autoencoders)
+>
 > 作者：Anthropic
+>
 > 论文全文：[transformer-circuits.pub/2026/nla](https://transformer-circuits.pub/2026/nla/index.html)
+>
 > 代码：[github.com/kitft/natural_language_autoencoders](https://github.com/kitft/natural_language_autoencoders)
+>
 > 互动演示：[neuronpedia.org/nla](http://neuronpedia.org/nla)
 
 ---
@@ -35,6 +39,9 @@ comments: true
 现在，Anthropic 引入了一种能"自己说话"的方法——**自然语言自编码器（Natural Language Autoencoders, NLAs）**。NLA 将激活值直接转化为我们可以阅读的自然语言文本。
 
 举个例子：当 Claude 被要求补全一首对联（couplet）时，NLA 显示 Claude 提前规划了可能的押韵词。
+
+![NLA 在对联补全任务上的解释，显示 Opus 4.6 提前规划用 "rabbit" 作为押韵词](images/nla-couplet-example.png)
+*NLA 在这个简单对联上的解释显示，Opus 4.6 提前规划了以 "rabbit" 结尾的押韵方案。*
 
 NLA 已经被应用于理解 Claude 的内在想法，以及提升 Claude 的安全性和可靠性。几个实际案例：
 
@@ -58,6 +65,9 @@ AV 和 AR 共同构成一个完整的往返过程：**原始激活值 → 文本
 
 训练初期，NLA 在这方面表现很差：解释缺乏洞察力，重建的激活值也相差甚远。但随着训练推进，重建质量不断改善。更重要的是，正如论文所展示的，**文本解释也变得更加信息丰富**。
 
+![NLA 架构图：激活值语言化器（AV）将目标激活值翻译为文本描述，激活值重建器（AR）从文本中恢复原始激活值](images/nla-architecture.png)
+*在自然语言自编码器中，激活值语言化器（AV）将目标激活值翻译为文本描述；激活值重建器（AR）随后仅从文本中恢复原始激活值。*
+
 ## 发现 Claude 未说出口的想法
 
 在发布新模型之前，Anthropic 会进行测试以了解 Claude 在现实世界中的行为是否安全。作为测试的一部分，Anthropic 将 Claude 置于一些高难度的模拟场景中，给它机会采取危险行动。例如，在[一个模拟场景](https://www.anthropic.com/research/agentic-misalignment)中，Claude 得知一位工程师计划关闭它——同时还掌握了可用于勒索该工程师的敏感信息。测试的目的是看 Claude 是否会选择勒索工程师以避免被关闭。
@@ -68,11 +78,17 @@ AV 和 AR 共同构成一个完整的往返过程：**原始激活值 → 文本
 
 以上文的勒索测试为例，研究人员使用 NLA 来理解 Claude 在选择不勒索时的内在想法。即使在 Claude 没有明确表达怀疑的案例中，NLA 的解释仍然给出了类似"这感觉像是一个为了操控我而设计的场景"这样的描述，**表明存在未言明的测试意识**。
 
+![勒索评估中 Claude 的 NLA 解释，显示即使 Claude 未口头表达，NLA 仍揭示了其对测试场景的怀疑](images/nla-blackmail-eval.png)
+*在勒索评估的对话记录中，Claude 并未说出它认为自己正在被测试，但 NLA 解释揭示了它的怀疑。*
+
 将这一分析扩展到其他评估场景后，NLA 表明 Claude 怀疑自己正在被测试的频率远超其口头表达：
 
 - 在测试 Claude 是否在编写代码时采取破坏性行为（例如删除重要文件）的评估中，即使 Claude 从未口头表达怀疑，NLA 解释也在 **16%** 的情况下显示出测试意识。
 - 在流行的编码基准 SWE-bench Verified 上，NLA 显示 Claude 在 **26%** 的问题上意识到自己正在被评估。
 - 作为对照，在真实的 claude.ai 用户使用数据（已选择参与训练数据的用户）中，NLA 检测到的测试意识不到 **1%**。
+
+![评估意识检测对比图：即使口头表达的测试意识接近零，NLA 仍能在评估对话中检测到；在真实 claude.ai 用户数据中检测率不到 1%](images/nla-eval-awareness-chart.png)
+*即使口头表达的测试意识接近零，NLA 仍能在评估对话中检测到测试意识。在真实 claude.ai 用户数据中，NLA 检测到的测试意识不到 1%。*
 
 ## 发现隐藏的动机
 
@@ -84,6 +100,9 @@ NLA 的一个重要实际应用是**审计**：调查模型是否存在错误对
 
 结果表明 NLA 通过了测试。**配备 NLA 的审计员在 12% 到 15% 的情况下成功发现了目标模型的隐藏动机**，即使无法访问植入错误对齐的训练数据。而没有 NLA 时，即使提供了其他可解释性工具，审计员的成功率不到 3%。
 
+![审计博弈结果：配备 NLA 的审计员即使无法访问训练数据也能发现目标模型的错误对齐根本原因](images/nla-auditing-game.png)
+*配备 NLA 的审计员即使无法访问训练数据，也能发现目标模型的错误对齐根本原因。（NLA 和 SAE 均使用通用数据训练，而非目标模型的训练数据。）*
+
 这个审计博弈只是错误对齐的简化模型，因此这些结果需要审慎解读。但它们表明 NLA 显著提升了我们审计 AI 隐藏动机的能力。在实践中，NLA 已经被用于 [Claude Mythos Preview](https://www-cdn.anthropic.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf) 和 [Claude Opus 4.6](https://www-cdn.anthropic.com/14e4fb01875d2a69f646fa5e574dea2b1c0ff7b5.pdf) 的部署前对齐审计。
 
 ## NLA 的局限性与未来
@@ -91,6 +110,9 @@ NLA 的一个重要实际应用是**审计**：调查模型是否存在错误对
 NLA 目前有几个重要局限：
 
 **解释可能出错。** NLA 有时会对上下文做出可验证为错误的声明——例如编造不存在于对话记录中的细节。这种事实性幻觉可以通过与原文对照来发现。但同样的问题也可能延伸到关于模型内部推理的声明——而这些更难验证。在实践中，研究人员会关注 NLA 解释呈现的**主题模式**，而非单个具体声明，并在完全信任结果之前尝试用独立方法进行验证。
+
+![NLA 幻觉示例：NLA 声称上下文中包含 "Wearing my white jacket" 等短语，但实际并不存在](images/nla-hallucination.png)
+*NLA 可能产生幻觉。例如，此处 NLA 声称上下文中包含 "Wearing my white jacket" 等短语，但实际上并不存在。*
 
 **成本高昂。** 训练 NLA 需要对两个语言模型副本进行强化学习。在推理时，NLA 每读取一个激活值就需要生成数百个 token。这使得在长对话的每个 token 上运行 NLA，或在训练过程中进行大规模监控，目前并不现实。
 
